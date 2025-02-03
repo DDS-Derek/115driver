@@ -220,6 +220,7 @@ func (c *Pan115Client) RapidUpload(fileSize int64, fileName, dirID, preID, fileI
 	form.Set("filesize", fileSizeStr)
 	form.Set("fileid", fileID)
 	form.Set("target", target)
+	form.Set("topupload", "true")
 	form.Set("sig", c.GenerateSignature(fileID, target))
 
 	signKey, signVal := "", ""
